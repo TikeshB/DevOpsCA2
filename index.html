@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Feedback Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="card">
+        <header class="card__header">
+          <h1 class="title">Student Feedback Registration</h1>
+          <p class="subtitle">
+            Share your feedback so we can keep improving your learning experience.
+          </p>
+        </header>
+
+        <form id="feedbackForm" class="form" novalidate>
+          <div class="grid">
+            <div class="field">
+              <label class="field__label" for="name">Student Name</label>
+              <input
+                class="field__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g. Aisha Khan"
+                required
+              />
+              <p class="field__error" data-for="name"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">Email ID</label>
+              <input
+                class="field__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="e.g. name@example.com"
+                required
+              />
+              <p class="field__error" data-for="email"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Mobile Number</label>
+              <input
+                class="field__input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="e.g. 9876543210"
+                minlength="10"
+                maxlength="10"
+                required
+              />
+              <p class="field__error" data-for="phone"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="department">Department</label>
+              <select class="field__input" id="department" name="department" required>
+                <option value="" disabled selected>Select department</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="field__error" data-for="department"></p>
+            </div>
+
+            <fieldset class="field field--radio">
+              <legend class="field__label">Gender</legend>
+              <div class="radioGroup">
+                <label class="radio">
+                  <input type="radio" name="gender" value="Male" />
+                  <span>Male</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="gender" value="Female" />
+                  <span>Female</span>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="gender" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+              <p class="field__error" data-for="gender"></p>
+            </fieldset>
+
+            <div class="field field--full">
+              <label class="field__label" for="comments">Feedback Comments</label>
+              <textarea
+                class="field__input textarea"
+                id="comments"
+                name="comments"
+                rows="5"
+                placeholder="Tell us what went well and what can improve (min 10 words)."
+                required
+              ></textarea>
+              <p class="field__error" data-for="comments"></p>
+            </div>
+          </div>
+
+          <div class="form__actions">
+            <button type="reset" class="button button--secondary" id="resetBtn">
+              Reset
+            </button>
+            <button type="submit" class="button button--primary" id="submitBtn">
+              Submit Feedback
+            </button>
+          </div>
+
+          <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Built for student feedback with validation, accessibility, and modern UI.
+          Tested with Selenium and ready for CI automation.
+        </p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
